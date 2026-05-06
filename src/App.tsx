@@ -84,19 +84,17 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    if (step === 1) {
-      const timer = setTimeout(() => setStep(2), 2000);
-      return () => clearTimeout(timer);
+  const handlePageClick = () => {
+    if (isPlaying && step >= 1 && step < 3) {
+      setStep(prev => prev + 1);
     }
-    if (step === 2) {
-      const timer = setTimeout(() => setStep(3), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [step]);
+  };
 
   return (
-    <div className="min-h-screen bg-birthday relative overflow-hidden flex items-center justify-center p-4">
+    <div 
+      className="min-h-screen bg-birthday relative overflow-hidden flex items-center justify-center p-4 cursor-pointer"
+      onClick={handlePageClick}
+    >
       <audio ref={audioRef} src={birthdayAudio} loop />
       {/* Background Decor */}
       <AnimatePresence>
