@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🎂 Happy Birthday Uncle Dong
 
-# Run and deploy your AI Studio app
+Một dự án web tĩnh dùng để chúc mừng sinh nhật, được xây dựng bằng **React** và **Vite**.
 
-This contains everything you need to run your app locally.
+## 🚀 Chạy thử nghiệm trên máy cá nhân (Local)
 
-View your app in AI Studio: https://ai.studio/apps/234f8025-d20b-487c-905f-1822fd8f295f
+**Yêu cầu:** Đã cài đặt [Node.js](https://nodejs.org/).
 
-## Run Locally
+1. Cài đặt các thư viện cần thiết (bao gồm Vite, React và thư viện giao diện):
+   ```bash
+   npm install
+   ```
 
-**Prerequisites:**  Node.js
+2. Khởi động môi trường phát triển:
+   ```bash
+   npm run dev
+   ```
 
+3. Mở trình duyệt và truy cập vào đường dẫn `http://localhost:3000` (hoặc đường dẫn được hiển thị trên console).
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🌐 Đưa lên GitHub Pages (Deploy)
+
+Dự án này đã được cấu hình với thư viện `gh-pages` để phát hành công khai. 
+
+1. Đảm bảo dự án đã được **push** source code cơ bản lên GitHub của bạn.
+2. Chạy lệnh xuất bản:
+   ```bash
+   npm run deploy
+   ```
+3. Lệnh này sẽ biên dịch mã và đẩy thư mục `dist` lên nhánh `gh-pages`. Sau đó 1-2 phút, bạn có thể xem trang web trực tiếp từ link GitHub Pages của mình!

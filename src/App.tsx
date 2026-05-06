@@ -92,7 +92,7 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen bg-birthday relative overflow-hidden flex items-center justify-center p-4 cursor-pointer"
+      className="min-h-screen bg-birthday relative overflow-x-hidden overflow-y-auto flex items-center justify-center p-4 cursor-pointer"
       onClick={handlePageClick}
     >
       <audio ref={audioRef} src={birthdayAudio} loop />
