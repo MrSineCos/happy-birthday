@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Gift, Sparkles, Play, Volume2, Star, PartyPopper, Cake } from 'lucide-react';
 import HappyBirthdayImage from './HappyBirthdayUncle.png';
+import birthdayAudio from './happy_birthday.wav';
 
 // --- Components ---
 
@@ -73,10 +74,14 @@ const Balloon = ({ color, delay, left }: { color: string, delay: number, left: s
 export default function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [step, setStep] = useState(0);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const startCelebration = () => {
     setIsPlaying(true);
     setStep(1);
+    if (audioRef.current) {
+      audioRef.current.play().catch(console.error);
+    }
   };
 
   useEffect(() => {
@@ -92,6 +97,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-birthday relative overflow-hidden flex items-center justify-center p-4">
+      <audio ref={audioRef} src={birthdayAudio} loop />
       {/* Background Decor */}
       <AnimatePresence>
         {isPlaying && (
