@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Libre Baskerville", serif;
+  --font-sans: "Outfit", sans-serif;
+  
+  --color-festive-pink: #FF69B4;
+  --color-festive-gold: #FFD700;
+  --color-festive-sky: #87CEEB;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased overflow-hidden;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .bg-birthday {
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(255, 105, 180, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(135, 206, 235, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
+  }
+  
+  .glass {
+    @apply backdrop-blur-md bg-white/30 border border-white/20;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
